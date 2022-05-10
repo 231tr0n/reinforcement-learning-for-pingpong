@@ -96,21 +96,6 @@ class Agent:
 					this.dataset['q_table'][state]['down'] = round(temp1['down'] + (this.alpha * (reward[temp_action] + (this.gamma * max(temp1['up'], temp1['down'])) - temp1['down'])), 5)
 		this.dump_dataset()
 
-#
-# 	def evaluate(this):
-# 		this.load_dataset()
-# 		this.env = Environment(headless = False)
-# 		this.env.render()
-# 		boolean = TRue
-# 		while boolean:
-# 			time.sleep(this.env.time_delay)
-# 			temp = this.env.step()
-# 			if temp == 'Left' or temp == 'Right':
-# 				boolean = False
-# 				this.game_over(temp)
-# 				break
-# 			this.render()
-
 if __name__ == "__main__":
 	agent = Agent(0.1, 0.1, 'Right')
 	agent.train(10)
